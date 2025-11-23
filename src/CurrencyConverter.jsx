@@ -3,14 +3,6 @@ import React, {useState, useEffect} from "react"
 import currencies from './currencies-with-flags.json';
 
 function CurrencyConverter() {
-    // const currencies = ["INR", "EUR", "JPY", "USD"];
-    // const currencies = [
-    //     {code: "INR", name: "Indian Rupee"},
-    //     {code: "EUR", name: "Euro"},
-    //     {code: "JPY", name: "Japanese Yen"},
-    //     {code: "USD", name: "US-Dollar"},
-    // ]
-
     const [amount, setAmount] = useState(1);
     const [from, setFrom] = useState("INR");
     const [to, setTo] = useState("USD");
@@ -18,7 +10,7 @@ function CurrencyConverter() {
     const [result, setResult] = useState(null);
     const [error, setError] = useState(null);
 
-    const API_KEY = "ee2e4150f197823345ba76c1";
+    const API_KEY = "YOUR_API_KEY";
 
     useEffect(() => {
         fetch(`https://v6.exchangerate-api.com/v6/${API_KEY}/codes`)
@@ -44,8 +36,6 @@ function CurrencyConverter() {
         .then(resp => resp.json())
         .then(data => {
             console.log('API Response:', data);
-            // const rate = data.conversion_rates[to];
-            // if(data.rates && data.rates[to])
             const rate = data.conversion_rates ? data.conversion_rates[to] : null;
             if(rate) {
                 setResult((amount * rate).toFixed(3));
