@@ -36,15 +36,13 @@ Currency Converter App is a modern, real-time currency conversion tool built wit
 ```
 Currency-Converter-App/
 ├── src/
-│   ├── components/
-│   │   ├── CurrencyConverter.jsx
-│   │   ├── App.jsx
-│   │   └── ...
 │   ├── assets/
 │   │   └── (images, flags)
 │   ├── App.css
+|   ├── CurrencyConverter.jsx
 │   ├── index.css
-│   └── main.jsx
+│   ├── main.jsx
+│   └── ...
 ├── public/
 │   └── (static files)
 ├── package.json
